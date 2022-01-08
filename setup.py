@@ -11,6 +11,7 @@ setup(
   ],
   include_package_data=True,
   package_data={'': []},
+  py_modules=['fasttools'],
   entry_points='''
   [console_scripts]
   fast=fasttools:cli
