@@ -3,6 +3,9 @@ import speedtest, json
 
 from rich.console import Console
 
+from flask import Flask
+from threading import Thread
+
 console = Console()
 
 st = speedtest.Speedtest()
@@ -117,6 +120,19 @@ class Commands:
     f = open(file_path[0])
     data = json.load(f)
     print(json.dumps(data, indent=2))
+
+  def server():
+    app = Flask('')
+
+    @app.route('/')
+    def home():
+      return "Started Web Server!"
+
+    def run():
+      app.run(host="0.0.0.0", port=8080)
+
+    def start_server():
+      Thread(target=run).start()
 
 
   
