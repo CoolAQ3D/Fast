@@ -134,7 +134,7 @@ class Commands:
     def start_server():
       Thread(target=run).start()
     
-    start_serer()
+    start_server()
 
 
   
