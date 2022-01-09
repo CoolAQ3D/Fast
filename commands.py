@@ -131,10 +131,8 @@ class Commands:
     def run():
       app.run(host="0.0.0.0", port=8080)
 
-    def start_server():
-      Thread(target=run).start()
+    Thread(target=run).start()
     
-    start_server()
 
 
   
