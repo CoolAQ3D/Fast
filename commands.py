@@ -91,7 +91,7 @@ class Commands:
   
   def discord(create_file_name):
     print('Finding Discord Template')
-    path = Commands.path('discord.py')
+    path = Commands.path('discord_template.py')
 
     #create a file 
     f = open(create_file_name, "w")
