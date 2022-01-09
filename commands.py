@@ -68,8 +68,23 @@ class Commands:
          result.append(os.path.join(root, filename))
   
     if len(result) == 0:
-      print("File not found!")
-      return None
+      print("File not found! Trying /opt file")
+
+      #try /opt folder
+
+      search_path = "/opt"
+      result = []
+      for root, dir, files in os.walk(search_path):
+        if filename in files:
+          result.append(os.path.join(root, filename))
+      
+      if len(result) == 0:
+        print('File not found even after second try... Probably does not exsit')
+        return None
+      else:
+        print(result)
+        return result
+
     else:
       print(result)
       return result
