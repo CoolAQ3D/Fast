@@ -121,17 +121,11 @@ class Commands:
     data = json.load(f)
     print(json.dumps(data, indent=2))
 
-  def server():
-    app = Flask('')
-
-    @app.route('/')
-    def home():
-      return "Started Web Server!"
-
-    def run():
-      app.run(host="0.0.0.0", port=8080)
-
-    Thread(target=run).start()
+  def test(x,y,z, lol=None):
+    print(x)
+    print(y)
+    print(z)
+    print(lol)
     
 
 

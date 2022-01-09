@@ -1,0 +1,5 @@
+discord
+rich
+speedtest-cli
+click
+psutil

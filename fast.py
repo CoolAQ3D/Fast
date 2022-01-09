@@ -2,6 +2,8 @@ import os, sys
 from rich.console import Console
 from commands import Commands
 
+import inspect
+
 console = Console()
 
 def cli():
@@ -11,40 +13,42 @@ def cli():
 
   if arguments_length == 1:
     return print("Welcome to FastTools by MrCools!\nStart using by typing - fast help")
-  #Up to 3 arguments supported as of now
-  if arguments_length > 3:
-    return print('Usage: fast command subcommand. \nMaybe you want to use quotes like "optional subcommands arguments" ? ')
 
-  #SubCommand 
-  try:
-    command = arguments[1]
-  except IndexError:
-    return console.print('No commands provided')
+  #Remove fast from argument 
+  arguments.pop(0)
+
+  #Get Command Name
+  command = arguments[0]
+
+  #Remove Command, only keeps values or paraments 
+  arguments.pop(0)
+
+  subcommands = []
+  for x in arguments:
+    subcommands.append(f"'{x}'")
   
-  #Subcommand arguments
-  try: 
-    subcommand = arguments[2]
-  except IndexError:
-    subcommand = None
+  subcommands = ",".join(subcommands)
 
-
+  #print(f"Command Name: {command} \nSub Commands: {subcommands}")
+  
+  #Run Commands
   try:
-    if subcommand:
-      #if subcommands takes arguments
-      
-      eval(f"Commands.{command + '(subcommand)'}")
+    eval(f"Commands.{command}({subcommands})")
+  except TypeError:
+    err = eval(f"inspect.getargspec(Commands.{command})")
+    err = str(err)
+    #print(err)
 
-    else:
-      eval(f"Commands.{command}()")
-
+    head, sep, tail = err.partition(', varargs')
+    err = head
+    
+    err = err.replace('ArgSpec(args=', "")
+    print(f"Required Subcommand: {err}")
   except AttributeError:
-    return print('Unknown command, see available commands by typing fast help')
-  except Exception as e:
-    if "missing 1 required positional argument" in str(e):
-      return print("This command needs subcommands")
-    else:
-      return print(e)
+    print(f'Command {command} not found. \nType fast help')
 
+
+    
 
 
 
