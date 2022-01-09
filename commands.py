@@ -113,8 +113,8 @@ class Commands:
     print(f'Created {filename}')
   
   def print_json(filename):
-    file_path = Commands.path(filename[0])
-    f = open(file_path)
+    file_path = Commands.path(filename)
+    f = open(file_path[0])
     data = json.load(f)
     print(json.dumps(data, indent=2))
 
