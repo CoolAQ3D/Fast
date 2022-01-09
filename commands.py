@@ -58,70 +58,48 @@ class Commands:
   
 
   #Search Specific File for it's location
-  def path(filename):
-    search_path = "/home/runner"
+  def path(filename, start_location = "/home/runner"):
     result = []
 
     # Wlaking top-down from the root
-    for root, dir, files in os.walk(search_path):
+    for root, dir, files in os.walk(start_location):
       if filename in files:
          result.append(os.path.join(root, filename))
   
     if len(result) == 0:
-      print("File not found! Trying /site-packages file")
-
-      #try /opt folder
-
-      search_path = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
-      result = []
-      for root, dir, files in os.walk(search_path):
-        if filename in files:
-          result.append(os.path.join(root, filename))
-      
-      if len(result) == 0:
-        print('File not found even after second try... Probably does not exsit')
-        return None
-      else:
-        print(result)
-        return result
-
+      print("File not found! Probably doesn't exist!")
+      return None
     else:
       print(result)
       return result
   
   def discord(create_file_name):
-    print('Finding Discord Template')
-    path = Commands.path('discord_template.py')
+    print('Downloading Discord Template')
 
-    #create a file 
-    f = open(create_file_name, "w")
+    search_location = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
 
-    print(f'Copying the discord template to {create_file_name}')
-    new_path = Commands.path(create_file_name)
+    path = Commands.path('discord_template.py', start_location=search_location)
+
+    if path:
+      HelperTools.copy_file(create_file_name, path)
+    else:
+      print('Searching in /home/runner dictionary')
+      path = Commands.path("discord_template.py")
+
+      if path:
+        HelperTools.copy_file(create_file_name, path)
+      else:
+        return print("No file found in site-packages or home dictionary")
+    
+  
+  
+class HelperTools:
+  def copy_file(filename, path):
+
+    f = open(filename, "w")
+    print(f'Creating file: {filename}')
+
+    new_path = Commands.path(filename)
     shutil.copyfile(path[0], new_path[0])
 
-    print('Successfully created discord template')
-  
-  
-    
-
-
-
-class HelperTools:
-  def file_path_finder(file_name, extension):
-    file_location = os.path.join(os.path.dirname(__file__), f'{file_name}') + f'{extension}'
-
-    return file_location
-  
-  def find_files(filename, search_path):
-   result = []
-
-# Wlaking top-down from the root
-   for root, dir, files in os.walk(search_path):
-      if filename in files:
-         result.append(os.path.join(root, filename))
-  
-  # if len(result) == 0:
-     #return result = None
-     
-   return result
+    print(f'Successfully created {filename}')

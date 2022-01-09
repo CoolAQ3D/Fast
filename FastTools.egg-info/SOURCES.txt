@@ -2,6 +2,9 @@ commands.py
 fast.py
 setup.py
 Fast/__init__.py
+Fast/main.py
+Fast/Template/__init__.py
+Fast/Template/discord_template.py
 FastTools.egg-info/PKG-INFO
 FastTools.egg-info/SOURCES.txt
 FastTools.egg-info/dependency_links.txt
