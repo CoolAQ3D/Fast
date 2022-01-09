@@ -16,6 +16,6 @@ setup(
   py_modules=['fast', 'commands'],
   entry_points='''
   [console_scripts]
-  fast=fasttools:cli
+  fast=fast:cli
   '''
 )
