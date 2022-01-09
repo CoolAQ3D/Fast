@@ -74,9 +74,18 @@ class Commands:
       print(result)
       return result
   
-  def discord():
-    Commands.path('discord.py')
-    shutil.copyfile('./Fast/Template/discod.py', '.')
+  def discord(create_file_name):
+    print('Finding Discord Template')
+    path = Commands.path('discord.py')
+
+    #create a file 
+    f = open(create_file_name, "w")
+
+    print(f'Copying the discord template to {create_file_name}')
+    new_path = Commands.path(create_file_name)
+    shutil.copyfile(path[0], new_path[0])
+
+    print('Successfully created discord template')
   
   
     
