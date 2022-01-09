@@ -1,17 +1,19 @@
 from setuptools import setup, find_packages
 
 setup(
-  name="FastTools v1",
+  name="FastTools",
   version="1.0.0",
   author='MrCools',
   packages=find_packages(),
   install_requires=[
     'discord',
-    'rich'
+    'rich',
+    'speedtest-cli',
+    'click'
   ],
   include_package_data=True,
   package_data={'': []},
-  py_modules=['fasttools'],
+  py_modules=['fast', 'commands'],
   entry_points='''
   [console_scripts]
   fast=fasttools:cli
