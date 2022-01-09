@@ -73,12 +73,21 @@ class Commands:
       print(result)
       return result
   
+  def path_lib(filename):
+    start_location = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
+    Commands.path(filename, start_location=start_location)
+  
   def discord(create_file_name):
     print('Downloading Discord Template')
 
-    search_location = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
+    start_location = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
 
-    path = Commands.path('discord_template.py', start_location=search_location)
+    path = Commands.path('discord_template.py', start_location=start_location)
+
+    #using pip install git+location
+    #should be working
+    #using pip install -e . 
+    #library will be in /home
 
     if path:
       HelperTools.copy_file(create_file_name, path)
@@ -90,7 +99,14 @@ class Commands:
         HelperTools.copy_file(create_file_name, path)
       else:
         return print("No file found in site-packages or home dictionary")
-    
+  
+  def clear():
+    cls = lambda: print("\033c\033[3J", end='')
+    cls()
+  
+  def pycache():
+    os.system("find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete")
+
   
   
 class HelperTools:
