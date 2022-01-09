@@ -59,7 +59,7 @@ class Commands:
 
   #Search Specific File for it's location
   def path(filename):
-    search_path = "/home"
+    search_path = "/home/runner"
     result = []
 
     # Wlaking top-down from the root
@@ -68,11 +68,11 @@ class Commands:
          result.append(os.path.join(root, filename))
   
     if len(result) == 0:
-      print("File not found! Trying /opt file")
+      print("File not found! Trying /site-packages file")
 
       #try /opt folder
 
-      search_path = "/opt"
+      search_path = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
       result = []
       for root, dir, files in os.walk(search_path):
         if filename in files:
