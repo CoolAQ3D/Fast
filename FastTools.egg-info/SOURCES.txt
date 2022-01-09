@@ -1,4 +1,5 @@
-fasttools.py
+commands.py
+fast.py
 setup.py
 Fast/__init__.py
 FastTools.egg-info/PKG-INFO

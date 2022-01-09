@@ -9,7 +9,8 @@ setup(
     'discord',
     'rich',
     'speedtest-cli',
-    'click'
+    'click',
+    'psutil'
   ],
   include_package_data=True,
   package_data={'': []},

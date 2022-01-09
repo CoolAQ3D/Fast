@@ -1,0 +1,1 @@
+from Fast.Template.discord import discord_print
