@@ -57,3 +57,47 @@ class Commands:
     print("Free: %d GB" % (free // (2**30)))
   
 
+  #Search Specific File for it's location
+  def path(filename):
+    search_path = "/home"
+    result = []
+
+    # Wlaking top-down from the root
+    for root, dir, files in os.walk(search_path):
+      if filename in files:
+         result.append(os.path.join(root, filename))
+  
+    if len(result) == 0:
+      print("File not found!")
+      return None
+    else:
+      print(result)
+      return result
+  
+  def discord():
+    Commands.path('discord.py')
+    shutil.copyfile('./Fast/Template/discod.py', '.')
+  
+  
+    
+
+
+
+class HelperTools:
+  def file_path_finder(file_name, extension):
+    file_location = os.path.join(os.path.dirname(__file__), f'{file_name}') + f'{extension}'
+
+    return file_location
+  
+  def find_files(filename, search_path):
+   result = []
+
+# Wlaking top-down from the root
+   for root, dir, files in os.walk(search_path):
+      if filename in files:
+         result.append(os.path.join(root, filename))
+  
+  # if len(result) == 0:
+     #return result = None
+     
+   return result
