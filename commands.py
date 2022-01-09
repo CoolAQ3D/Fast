@@ -107,6 +107,18 @@ class Commands:
   def pycache():
     os.system("find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete")
 
+  #Makes file
+  def file(filename):
+    open(filename, "w")
+    print(f'Created {filename}')
+  
+  def print_json(filename):
+    file_path = Commands.path(filename)
+    f = open(file_path)
+    data = json.load(f)
+    print(json.dumps(data, indent=2))
+
+
   
   
 class HelperTools:
