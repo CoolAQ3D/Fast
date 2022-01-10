@@ -150,9 +150,14 @@ class Commands:
     
 class Commands_Info:
   def get(command):
-    file_path = "/opt/virtualenvs/python3/lib/python3.8/site-packages/Fast/fast-help.json"
-  
-    #file_path = Commands.path("fast-help.json", start_location='.', show_path=False)
+    
+    main_directory = "."
+    library_directory = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
+
+    file_path = Commands.path("fast-help.json", start_location=library_directory, show_path=False)
+
+    if file_path == None:
+      file_path = Commands.path("fast-help.json", start_location=main_directory, show_path=False)
 
     f = open(file_path[0])
     data = json.load(f)
