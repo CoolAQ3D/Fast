@@ -136,8 +136,14 @@ class Commands:
   def fish(bird, animal, whatever, sky, earth, universe):
     pass
   
-  def fs():
-    walk_directory('home')
+  def file_view(path):
+    tree = Tree(
+        f"Main File Area - {os.getcwd()}",
+        guide_style="bold bright_blue",
+    )
+    walk_directory(path, tree)
+    console.print(tree)
+  
 
 
 

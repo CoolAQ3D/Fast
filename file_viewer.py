@@ -1,8 +1,3 @@
-"""
-Simple tree-render from the command line.
-Originally from: https://github.com/willmcgugan/rich/blob/master/examples/tree.py
-"""
-
 import os
 import pathlib
 import sys
@@ -44,15 +39,3 @@ def walk_directory(directory: pathlib.Path, tree: Tree) -> None:
             icon = "🐍 " if path.suffix == ".py" else "📄 "
             tree.add(Text(icon) + text_filename)
 
-
-try:
-    directory = os.path.abspath(sys.argv[1])
-except IndexError:
-    print("[b]Usage:[/] python tree.py <DIRECTORY>")
-else:
-    tree = Tree(
-        f":open_file_folder: [link file://{directory}]{directory}",
-        guide_style="bold bright_blue",
-    )
-    walk_directory(pathlib.Path(directory), tree)
-    print(tree)

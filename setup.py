@@ -13,8 +13,8 @@ setup(
     'psutil'
   ],
   include_package_data=True,
-  package_data={'': []},
-  py_modules=['fast', 'commands'],
+  package_data={'': ['*.json']},
+  py_modules=['fast', 'commands', 'file_viewer'],
   entry_points='''
   [console_scripts]
   fast=fast:cli
