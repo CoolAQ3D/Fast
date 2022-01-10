@@ -1,6 +1,6 @@
-import os, sys
+import os, sys, json
 from rich.console import Console
-from commands import Commands
+from commands import Commands, Commands_Info
 
 import inspect
 
@@ -28,27 +28,13 @@ def cli():
     subcommands.append(f"'{x}'")
   
   subcommands = ",".join(subcommands)
-
-  #print(f"Command Name: {command} \nSub Commands: {subcommands}")
-  
   #Run Commands
   try:
     eval(f"Commands.{command}({subcommands})")
   except TypeError:
-    err = eval(f"inspect.getargspec(Commands.{command})")
-    err = str(err)
-    #print(err)
-
-    head, sep, tail = err.partition(', varargs')
-    err = head
-    
-    err = err.replace('ArgSpec(args=', "")
-    print(f"Required Subcommand: {err}")
+    #If invalid usage, show help
+    Commands_Info.get(command)
   except AttributeError:
-    print(f'Command {command} not found. \nType fast help')
-
-
-    
-
+    console.print(f'This command is not found. \nType [#1CE27E]fast help[/#1CE27E]')
 
 

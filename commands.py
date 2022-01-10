@@ -2,6 +2,8 @@ import psutil, shutil, time, rich, os
 import speedtest, json
 
 from rich.console import Console
+from rich.tree import Tree
+from file_viewer import walk_directory
 
 from flask import Flask
 from threading import Thread
@@ -11,20 +13,23 @@ console = Console()
 st = speedtest.Speedtest()
 
 class Commands:
-  def help():
+  def help(command_name=None):
+    
+    #If given command run, show that command help instead of all
+    if command_name:
+      Commands_Info.get(command_name)
+      return
  
     command_list = [command for command in dir(Commands) if command.startswith('__') is False]
 
-    print("Available Commands \n" + ",".join(command_list))
+    console.print("[bold #1CE27E]Available Commands[/bold #1CE27E] \n" + ",".join(command_list))
 
   def speed():
-
     def convert_bytes(size):
       for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
           if size < 1024.0:
               return "%3.1f %s" % (size, x)
-          size /= 1024.0
-      
+          size /= 1024.0   
       return size
 
     console.print("Testing Download Speed...", style="#24E883")
@@ -61,7 +66,7 @@ class Commands:
   
 
   #Search Specific File for it's location
-  def path(filename, start_location = "/home/runner"):
+  def path(filename, start_location = "/home/runner", show_path=True):
     result = []
 
     # Wlaking top-down from the root
@@ -73,7 +78,8 @@ class Commands:
       print("File not found! Probably doesn't exist!")
       return None
     else:
-      print(result)
+      if show_path:
+        print(result)
       return result
   
   def path_lib(filename):
@@ -126,11 +132,45 @@ class Commands:
     print(y)
     print(z)
     print(lol)
+  
+  def fish(bird, animal, whatever, sky, earth, universe):
+    pass
+  
+  def fs():
+    walk_directory('home')
+
+
+
     
+class Commands_Info:
+  def get(command):
+    library_path = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
+  
+    file_path = Commands.path("fast-help.json", start_location=library_path, show_path=False)
+
+    f = open(file_path[0])
+    data = json.load(f)
+    
+    invalid_usage = f'[red bold][Invalid Usage][/red bold]: [#1CE27E bold]{command}[/#1CE27E bold]'
+
+    try:
+      name = command
+      description = data[command]['description']
+      usage = data[command]['usage']
+      subcommands = data[command]['subcommands']
+
+      console.print(invalid_usage)
+      console.print(f"[#F0CF3C bold][Description][/#F0CF3C bold]: {description}")
+      console.print(f"[#F0CF3C bold][Usage][/#F0CF3C bold]: {usage}")
+
+      if len(subcommands) != 0:
+        console.print(f"[#F0CF3C bold][SubCommands][/#F0CF3C bold]: {subcommands}")
+
+    except KeyError:
+      console.print(invalid_usage)
+      console.print(f"[red bold][Help][/red bold] not available for [#19EE69]{command}[/#19EE69]!")
 
 
-  
-  
 class HelperTools:
   def copy_file(filename, path):
 

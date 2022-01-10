@@ -1,0 +1,12 @@
+{
+  "help": {
+    "description": "Shows help command!",
+    "usage": "fast help",
+    "subcommands": []
+  },
+  "wifi": {
+    "description": "Shows wifi info",
+    "usage": "fast wifi",
+    "subcommands": ["hi", "hello", "hey"]
+  }
+}
