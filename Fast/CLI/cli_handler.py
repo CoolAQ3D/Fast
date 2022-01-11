@@ -61,6 +61,7 @@ class Commands_Info:
   def get(command):
     
     current_directory = os.getcwd()
+    print(f"CommandsInfo {current_directory}")
 
     help_path = f"{current_directory}/Fast/CLI/fast-help.json"
 

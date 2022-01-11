@@ -10,6 +10,9 @@ def template(template_name, create_file_name):
 def discord(create_file_name):
     print('Downloading Discord Template')
 
+    current_directory = os.getcwd()
+    print(f"Template {current_directory}")
+    discord_template_path = f"{current_directory}/Fast"
     discord_template_path = file("path", "discord_template.py", start_location="library")
 
     copy_file(create_file_name, discord_template_path)
