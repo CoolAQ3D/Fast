@@ -14,6 +14,9 @@ def get_file(create_file_name, template_name):
     elif template_name in "flask":
       print('Downloading Flask Template')
       template_path = find_absolute_path('flask_template.py', first=True) 
+    elif template_name in "setup":
+      print('Downloading Setup Template')
+      template_path = find_absolute_path('setup_template.py', first=True) 
 
     copy_file(create_file_name, template_path)
 
