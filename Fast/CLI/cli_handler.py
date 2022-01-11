@@ -1,5 +1,6 @@
 import time, os, json
 from rich.console import Console
+from pathlib import Path
 
 console = Console()
 
@@ -60,10 +61,12 @@ class Command_Handler:
 class Commands_Info:
   def get(command):
     
-    current_directory = os.getcwd()
-    print(f"CommandsInfo {current_directory}")
+    #current_directory = os.getcwd()
+    #print(f"CommandsInfo {current_directory}")
 
-    help_path = f"{current_directory}/Fast/CLI/fast-help.json"
+    #help_path = f"{current_directory}/Fast/CLI/fast-help.json"
+    help_path = Path('fast-help.json').absolute()
+    print(f"Commands_Info {help_path}")
 
     f = open(help_path)
     data = json.load(f)
