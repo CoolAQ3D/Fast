@@ -11,8 +11,9 @@ class Command_Handler:
   from Fast.CLI.commands.wifi import wifi
   from Fast.CLI.commands.speed import speed
   from Fast.CLI.commands.system import system
-  from Fast.CLI.commands.file import file
-  from Fast.CLI.commands.file import tools
+  from Fast.CLI.commands.file import file  
+  from Fast.CLI.commands.tools import tools
+  from Fast.CLI.commands.template import template
 
 
   def run(command, subcommands):
@@ -34,9 +35,10 @@ class Command_Handler:
       if debug_mode:
         console.print(f'[#8EEA18 bold][Speed][/#8EEA18 bold] Took [red bold]{round(end_time-start_time, 1)}s [/red bold] to run!')
 
-    except TypeError:
+    except TypeError as e:
       #If invalid command usages
       Commands_Info.get(command)
+      print(e)
     except AttributeError:
       #If commands not found
       console.print(f'This command is not found. \nType [#1CE27E]fast help[/#1CE27E]')
