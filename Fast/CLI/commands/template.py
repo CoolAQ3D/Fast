@@ -10,7 +10,7 @@ def template(template_name, create_file_name):
 def discord(create_file_name):
     print('Downloading Discord Template')
 
-    discord_template_path = file("path", "template-discord.json", start_location="library")
+    discord_template_path = file("path", "template-discord.py", start_location="library")
 
     copy_file(create_file_name, discord_template_path)
 
@@ -20,8 +20,6 @@ def copy_file(filename, path):
     print(f'Creating file: {filename}')
 
     new_path = file("path", filename, start_location="home")
-    print("path1"+path)
-    print("path2"+new_path)
     shutil.copyfile(path[0], new_path[0])
 
     print(f'Successfully created {filename}')
