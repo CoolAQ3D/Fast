@@ -8,5 +8,10 @@
     "description": "Shows wifi info",
     "usage": "fast wifi",
     "subcommands": ["hi", "hello", "hey"]
+  },
+  "print": {
+    "description": "Shows print command!",
+    "usage": "fast print",
+    "subcommands": []
   }
 }

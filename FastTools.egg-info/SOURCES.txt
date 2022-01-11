@@ -1,10 +1,7 @@
 README.md
-commands.py
-fast.py
-file_viewer.py
 setup.py
 Fast/__init__.py
-Fast/main.py
+Fast/file_viewer.py
 Fast/Template/__init__.py
 Fast/Template/discord_template.py
 Fast/Template/webserver.py

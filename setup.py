@@ -9,14 +9,13 @@ setup(
     'discord',
     'rich',
     'speedtest-cli',
-    'click',
     'psutil'
   ],
   include_package_data=True,
   package_data={'': ['*.json']},
-  py_modules=['fast', 'commands', 'file_viewer'],
+  #py_modules=['fast', 'commands', 'file_viewer'],
   entry_points='''
   [console_scripts]
-  fast=fast:cli
+  fast=Fast.CLI.fast:cli
   '''
 )

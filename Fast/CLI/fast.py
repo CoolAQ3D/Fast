@@ -1,16 +1,18 @@
 import os, sys, json
 from rich.console import Console
-from commands import Commands, Commands_Info
 
-import inspect
+from Fast.CLI.cli_handler import Command_Handler
 
 console = Console()
+#from rich.traceback import install
+#install(show_locals=True)
 
 def cli():
   
   arguments_length = len(sys.argv)
   arguments = sys.argv
 
+  #If only type - Fast
   if arguments_length == 1:
     return print("Welcome to FastTools by MrCools!\nStart using by typing - fast help")
 
@@ -28,13 +30,8 @@ def cli():
     subcommands.append(f"'{x}'")
   
   subcommands = ",".join(subcommands)
+
   #Run Commands
-  try:
-    eval(f"Commands.{command}({subcommands})")
-  except TypeError:
-    #If invalid usage, show help
-    Commands_Info.get(command)
-  except AttributeError:
-    console.print(f'This command is not found. \nType [#1CE27E]fast help[/#1CE27E]')
+  Command_Handler.run(command, subcommands)
 
 
