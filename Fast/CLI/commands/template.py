@@ -22,7 +22,8 @@ def copy_file(filename, path):
     f = open(filename, "w")
     print(f'Creating file: {filename}')
 
-    new_path = find_absolute_path(filename, first=True, start_location=".")
-    shutil.copyfile(path[0], new_path[0])
+    new_path = find_absolute_path(filename, first=True, start_location=os.getcwd())
+    print(f"File Area {new_path}")
+    shutil.copyfile(path, new_path)
 
     print(f'Successfully created {filename}')
