@@ -18,25 +18,7 @@ class Commands:
   
 
   #Search Specific File for it's location
-  def path(filename, start_location = "/home/runner", show_path=True):
-    result = []
 
-    # Wlaking top-down from the root
-    for root, dir, files in os.walk(start_location):
-      if filename in files:
-         result.append(os.path.join(root, filename))
-  
-    if len(result) == 0:
-      print("File not found! Probably doesn't exist!")
-      return None
-    else:
-      if show_path:
-        print(result)
-      return result
-  
-  def path_lib(filename):
-    start_location = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
-    Commands.path(filename, start_location=start_location)
   
   def discord(create_file_name):
     print('Downloading Discord Template')
@@ -68,10 +50,7 @@ class Commands:
   def pycache():
     os.system("find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete")
 
-  #Makes file
-  def file(filename):
-    open(filename, "w")
-    print(f'Created {filename}')
+
   
   def print_json(filename):
     file_path = Commands.path(filename, start_location=".")
@@ -79,23 +58,7 @@ class Commands:
     data = json.load(f)
     print(json.dumps(data, indent=2))
 
-  def test(x,y,z, lol=None):
-    print(x)
-    print(y)
-    print(z)
-    print(lol)
-  
-  def fish(bird, animal, whatever, sky, earth, universe):
-    pass
-  
-  def file_view(path):
-    tree = Tree(
-        f"Main File Area - {os.getcwd()}",
-        guide_style="bold bright_blue",
-    )
-    walk_directory(path, tree)
-    console.print(tree)
-  
+ 
 
 
 

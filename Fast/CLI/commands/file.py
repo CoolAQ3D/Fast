@@ -1,5 +1,5 @@
 
-import os, path, pathlib, sys
+import os, pathlib, sys
 
 from rich import print
 from rich.filesize import decimal
@@ -14,13 +14,38 @@ console = Console()
 
 
 #Shows file info
-def file(value, filename):
+def file(value, args, start_location="/home/runner"):
   
   if value in "create":
+    filename = args
     open(filename, "w")
     print(f'Created {filename}')
+  
+  elif value in "path":
+    result = []
+    filename = args
 
-  if value in "view":
+    if start_location in "home":
+      start_location = "/home/runner"
+    elif start_location in "library":
+      start_location = "/opt/virtualenvs/python3/lib/python3.8/site-packages"
+    
+    print(f"Searching from {start_location}")
+
+    # Wlaking top-down from the root
+    for root, dir, files in os.walk(start_location):
+      if filename in files:
+         result.append(os.path.join(root, filename))
+  
+    if len(result) == 0:
+      print("File not found! Probably doesn't exist!")
+      return None
+    else:
+      print(result)
+      return result
+
+  elif value in "view":
+    path = args
     tree = Tree(
       f"Main File Area - {os.getcwd()}",
       guide_style="bold bright_blue",
