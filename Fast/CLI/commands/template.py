@@ -3,8 +3,7 @@ from Fast.CLI.path.abs_path import find_absolute_path
 from pathlib import Path
 
 def template(template_name, create_file_name):
-  if template_name in "discord":
-    get_file(create_file_name, 'discord')
+    get_file(create_file_name, template)
 
 
 
