@@ -20,7 +20,4 @@ setup(
   '''
 )
 
-
-from rich.console import Console
-console = Console()
-console.print("Welcome to FastTools! \n type [bold #1CE27E]fast help[bold #1CE27E] to get started", style="bold red")
+print("Welcome to FastTools by MrCools!")
