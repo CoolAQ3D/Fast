@@ -2,6 +2,8 @@ import time, os, json
 from rich.console import Console
 from pathlib import Path
 
+from Fast.CLI.path.abs_path import find_absolute_path
+
 console = Console()
 
 debug_mode = True
@@ -39,7 +41,7 @@ class Command_Handler:
     except TypeError as e:
       #If invalid command usages
       Commands_Info.get(command)
-      print(e)
+      console.print(f'[red bold][Debug][/red bold] {e}')
     except AttributeError:
       #If commands not found
       console.print(f'This command is not found. \nType [#1CE27E]fast help[/#1CE27E]')
@@ -61,12 +63,9 @@ class Command_Handler:
 class Commands_Info:
   def get(command):
     
-    #current_directory = os.getcwd()
-    #print(f"CommandsInfo {current_directory}")
-
-    #help_path = f"{current_directory}/Fast/CLI/fast-help.json"
-    help_path = Path('fast-help.json').absolute()
-    print(f"Commands_Info {help_path}")
+    help_path = find_absolute_path("fast-help.json", first=True)
+    
+    print(f"Commands Info - {help_path}")
 
     f = open(help_path)
     data = json.load(f)
@@ -92,3 +91,4 @@ class Commands_Info:
     except KeyError: 
       console.print(invalid_usage)
       console.print(f"[red bold][Help][/red bold] not available for [#19EE69]{command}[/#19EE69]!")
+

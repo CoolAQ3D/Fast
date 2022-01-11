@@ -1,6 +1,7 @@
 import os, json
 from rich.traceback import install
 from Fast.CLI.commands.file import file
+from pathlib import Path
 
 
 def tools(value, json_filename=None):
@@ -18,3 +19,5 @@ def tools(value, json_filename=None):
     f = open(file_path[0])
     data = json.load(f)
     print(json.dumps(data, indent=2))
+
+    
