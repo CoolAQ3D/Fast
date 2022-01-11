@@ -5,6 +5,7 @@ Fast/CLI/__init__.py
 Fast/CLI/cli_handler.py
 Fast/CLI/fast.py
 Fast/CLI/commands/__init__.py
+Fast/CLI/commands/debug.py
 Fast/CLI/commands/file.py
 Fast/CLI/commands/print.py
 Fast/CLI/commands/speed.py
@@ -12,9 +13,11 @@ Fast/CLI/commands/system.py
 Fast/CLI/commands/template.py
 Fast/CLI/commands/tools.py
 Fast/CLI/commands/wifi.py
+Fast/CLI/path/__init__.py
+Fast/CLI/path/abs_path.py
 Fast/Template/__init__.py
 Fast/Template/discord_template.py
-Fast/Template/webserver.py
+Fast/Template/flask_template.py
 FastTools.egg-info/PKG-INFO
 FastTools.egg-info/SOURCES.txt
 FastTools.egg-info/dependency_links.txt

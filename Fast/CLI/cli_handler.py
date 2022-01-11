@@ -6,10 +6,11 @@ from Fast.CLI.path.abs_path import find_absolute_path
 
 console = Console()
 
-debug_mode = True
+
 
 class Command_Handler:
 
+  from Fast.CLI.commands.debug import debug
   from Fast.CLI.commands.print import print
   from Fast.CLI.commands.wifi import wifi
   from Fast.CLI.commands.speed import speed
@@ -23,6 +24,7 @@ class Command_Handler:
   
     #For Run Speed
     start_time = time.time()
+    debug = Debug.info()
 
     try:
       if command == "help":
@@ -35,13 +37,14 @@ class Command_Handler:
         eval(f"Command_Handler.{command}({subcommands})")
 
       end_time = time.time()
-      if debug_mode:
+      if debug:
         console.print(f'[#8EEA18 bold][Speed][/#8EEA18 bold] Took [red bold]{round(end_time-start_time, 1)}s [/red bold] to run!')
 
     except TypeError as e:
       #If invalid command usages
       Commands_Info.get(command)
-      console.print(f'[red bold][Debug][/red bold] {e}')
+      if debug:
+        console.print(f'[red bold][Debug][/red bold] {e}')
     except AttributeError:
       #If commands not found
       console.print(f'This command is not found. \nType [#1CE27E]fast help[/#1CE27E]')
@@ -65,8 +68,6 @@ class Commands_Info:
     
     help_path = find_absolute_path("fast-help.json", first=True)
     
-    print(f"Commands Info - {help_path}")
-
     f = open(help_path)
     data = json.load(f)
 
@@ -92,3 +93,16 @@ class Commands_Info:
       console.print(invalid_usage)
       console.print(f"[red bold][Help][/red bold] not available for [#19EE69]{command}[/#19EE69]!")
 
+
+
+class Debug:
+  def info():
+  #Debug Mode
+    data_path = find_absolute_path("config.json", first=True)
+    f = open(data_path)
+    data = json.load(f)
+    debug = data['Fast']['Debug']
+    if debug in "true":
+      return True
+    else:
+      return False
