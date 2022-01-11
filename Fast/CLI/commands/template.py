@@ -3,7 +3,7 @@ from Fast.CLI.path.abs_path import find_absolute_path
 from pathlib import Path
 
 def template(template_name, create_file_name):
-    get_file(create_file_name, template)
+    get_file(create_file_name, template_name)
 
 
 
