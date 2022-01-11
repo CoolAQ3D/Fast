@@ -20,8 +20,8 @@ def copy_file(filename, path):
     print(f'Creating file: {filename}')
 
     new_path = file("path", filename, start_location="home")
-    print(path)
-    print(new_path)
+    print("path1"+path)
+    print("path2"+new_path)
     shutil.copyfile(path[0], new_path[0])
 
     print(f'Successfully created {filename}')
