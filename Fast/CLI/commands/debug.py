@@ -2,6 +2,8 @@ import json
 from rich.console import Console
 console = Console()
 from Fast.CLI.path.abs_path import find_absolute_path
+from Fast.CLI import add_help
+
 def debug(value):
   data_path = find_absolute_path("config.json", first=True)
   f = open(data_path)

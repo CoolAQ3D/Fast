@@ -1,7 +1,7 @@
 import psutil, shutil
 from rich.console import Console
 
-console = Console
+console = Console()
 
 def system(system_type):
   if system_type in "ram":

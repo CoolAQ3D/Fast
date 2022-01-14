@@ -19,6 +19,9 @@ class Command_Handler:
   from Fast.CLI.commands.tools import tools
   from Fast.CLI.commands.template import template
 
+  #For testing add help
+  from Fast.CLI.commands.test import test
+
 
   def run(command, subcommands):
   
@@ -32,7 +35,7 @@ class Command_Handler:
       elif command == "run":
         #if try to use run function which is this
         #will ignore 
-        raise AttributeError
+        raise AttributeError("Permission Deniend!")
       else:
         eval(f"Command_Handler.{command}({subcommands})")
 
@@ -45,9 +48,12 @@ class Command_Handler:
       Commands_Info.get(command)
       if debug:
         console.print(f'[red bold][Debug][/red bold] {e}')
-    except AttributeError:
+    except AttributeError as e:
       #If commands not found
       console.print(f'This command is not found. \nType [#1CE27E]fast help[/#1CE27E]')
+      if debug:
+        console.print(f'[red bold][Debug][/red bold] {e}')
+
     
   def help(command_name=None):
     
