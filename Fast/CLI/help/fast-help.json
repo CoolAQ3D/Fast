@@ -1,1 +1,50 @@
-{}
+{
+  "tools": {
+    "description": "run quick tools",
+    "usage": "fast tools (subcommands)",
+    "subcommands": [
+      "clear",
+      "pycache",
+      "pjson"
+    ]
+  },
+  "wifi": {
+    "description": "shows wifi info",
+    "usage": "fast wifi",
+    "subcommands": "[]"
+  },
+  "template": {
+    "description": "get template file quickly",
+    "usage": "fast template (template name)",
+    "subcommands": [
+      "discord",
+      "flask",
+      "setup"
+    ]
+  },
+  "system": {
+    "description": "shows various system info",
+    "usage": "fast systme [type]",
+    "subcommands": "['memory', 'cpu', 'ram']"
+  },
+  "speed": {
+    "description": "shows internet speed",
+    "usage": "fast speed (optional: cli)",
+    "subcommands": []
+  },
+  "print": {
+    "description": "print with stylies",
+    "usage": "fast print (optional: rich style)",
+    "subcommands": []
+  },
+  "file": {
+    "description": "get various file info",
+    "usage": "fast file (subcommand) (filename/location) (optional: start location, PATH ONLY)",
+    "subcommands": "['create', 'path', 'view']"
+  },
+  "debug": {
+    "description": "shows extra info",
+    "usage": "fast debug (subcommand)",
+    "subcommands": "['on', 'off', 'true', 'false']"
+  }
+}

@@ -1,9 +1,18 @@
 import psutil, shutil
 from rich.console import Console
+from Fast.CLI import add_help
 
 console = Console()
 
 def system(system_type):
+
+  add_help(
+    name = "system",
+    description = "shows various system info",
+    usage = "fast systme (type)",
+    subcommands = ["memory", "cpu", "ram"]
+  )
+
   if system_type in "ram":
     console.print('RAM memory % used:', psutil.virtual_memory()[2], style="bold green")
   

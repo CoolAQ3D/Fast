@@ -2,8 +2,18 @@ import os, shutil
 from Fast.CLI.path.abs_path import find_absolute_path
 from pathlib import Path
 
+from Fast.CLI import add_help
+
 def template(template_name, create_file_name):
-    get_file(create_file_name, template_name)
+
+  add_help(
+    name = "template",
+    description = "get template file quickly",
+    usage = "fast template (template name)",
+    subcommands = ["discord", "flask", "setup"]
+  )
+
+  get_file(create_file_name, template_name)
 
 
 

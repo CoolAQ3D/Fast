@@ -9,12 +9,20 @@ from rich.tree import Tree
 
 
 from rich.console import Console
+from Fast.CLI import add_help
 
 console = Console()
 
 
 #Shows file info
 def file(value, args, start_location="/home/runner"):
+
+  add_help(
+    name = "file",
+    description = "get various file info",
+    usage = "fast file (subcommand) (filename/location) (optional: start location, PATH ONLY)",
+    subcommands = ["create", "path", "view"]
+  )
   
   if value in "create":
     filename = args

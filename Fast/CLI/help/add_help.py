@@ -5,7 +5,6 @@ import json
 from Fast.CLI.path.abs_path import find_absolute_path
 
 
-
 def add_help(
   name,
   description = "N/A",
@@ -26,14 +25,14 @@ def add_help(
 
   #If doesn't exit, create
   except KeyError as e:
-    print(f"key - {e}")
-    print(f'Creating data for {name}')
+    #print(f"key - {e}")
+    #print(f'Creating data for {name}')
 
     new_data = {
       f"{name}": {
         "description": f"{description}",
         "usage": f"{usage}",
-        "subcommand": f"{subcommands}"
+        "subcommands": f"{subcommands}"
       }
     }
     data.update(new_data)

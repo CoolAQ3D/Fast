@@ -3,9 +3,9 @@
     "Fast/CLI/commands/test.py": [
       {
         "id": "9bbdd592-8ec5-4255-82d4-26294cc97f35",
-        "line": 9,
-        "version": 93,
-        "index": 127
+        "line": 10,
+        "version": 200,
+        "index": 160
       }
     ],
     "Fast/CLI/fast-help.json": [

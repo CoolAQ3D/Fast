@@ -95,9 +95,13 @@ class Commands_Info:
       if len(subcommands) != 0:
         console.print(f"[#F0CF3C bold][SubCommands][/#F0CF3C bold]: {subcommands}")
 
-    except KeyError: 
+    except KeyError as e: 
       console.print(invalid_usage)
       console.print(f"[red bold][Help][/red bold] not available for [#19EE69]{command}[/#19EE69]!")
+
+      #debug = Debug.info()
+      #if debug:
+      #  console.print(f'[red bold][Debug Invalid][/red bold] {e}')
 
 
 

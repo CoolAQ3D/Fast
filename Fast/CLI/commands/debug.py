@@ -5,6 +5,14 @@ from Fast.CLI.path.abs_path import find_absolute_path
 from Fast.CLI import add_help
 
 def debug(value):
+
+  add_help(
+    name = "debug",
+    description = "shows extra info",
+    usage = "fast debug (subcommand)",
+    subcommands = ["on", "off", "true", "false"]
+  )
+
   data_path = find_absolute_path("config.json", first=True)
   f = open(data_path)
   data = json.load(f)
