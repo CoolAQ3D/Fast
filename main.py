@@ -1,3 +1,5 @@
+
+'''
 import Fast
 
 Fast.start(
@@ -5,3 +7,4 @@ Fast.start(
   rich_traceback = True,
   flask = True
 )
+'''
