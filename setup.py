@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 
+
 setup(
   name="FastTools",
   version="1.0.0",

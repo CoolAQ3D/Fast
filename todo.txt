@@ -1,6 +1,4 @@
 
 TO DO LIST, PLAN FEATURES
 
-
-
-#1: Make welcome message better
+#1: YouTube Downloader
