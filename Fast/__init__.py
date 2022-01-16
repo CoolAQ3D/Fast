@@ -1,0 +1,1 @@
+from Fast.fast_main import start

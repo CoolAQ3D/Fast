@@ -1,7 +1,0 @@
-
-TO DO LIST, PLAN FEATURES
-
-
-#1: Add file view for library location
-#2: Add rich traceback command
-#3: Make welcome message better

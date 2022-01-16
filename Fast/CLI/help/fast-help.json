@@ -45,6 +45,11 @@
   "debug": {
     "description": "shows extra info",
     "usage": "fast debug (subcommand)",
-    "subcommands": "['on', 'off', 'true', 'false']"
+    "subcommands": [
+      "on",
+      "off",
+      "true",
+      "false"
+    ]
   }
 }

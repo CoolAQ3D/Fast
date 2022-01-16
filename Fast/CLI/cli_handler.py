@@ -3,9 +3,9 @@ from rich.console import Console
 from pathlib import Path
 
 from Fast.CLI.path.abs_path import find_absolute_path
+from Fast.CLI.debug import Debug
 
 console = Console()
-
 
 
 class Command_Handler:
@@ -36,6 +36,8 @@ class Command_Handler:
         #if try to use run function which is this
         #will ignore 
         raise AttributeError("Permission Deniend!")
+      elif command == "-v":
+        print("Version: 1.0.0")
       else:
         eval(f"Command_Handler.{command}({subcommands})")
 
@@ -53,6 +55,9 @@ class Command_Handler:
       console.print(f'This command is not found. \nType [#1CE27E]fast help[/#1CE27E]')
       if debug:
         console.print(f'[red bold][Debug][/red bold] {e}')
+    except Exception as other_erros:
+      if debug:
+        console.print(f"[red bold][Debug][/red bold] {other_erros}")
 
     
   def help(command_name=None):
@@ -98,21 +103,3 @@ class Commands_Info:
     except KeyError as e: 
       console.print(invalid_usage)
       console.print(f"[red bold][Help][/red bold] not available for [#19EE69]{command}[/#19EE69]!")
-
-      #debug = Debug.info()
-      #if debug:
-      #  console.print(f'[red bold][Debug Invalid][/red bold] {e}')
-
-
-
-class Debug:
-  def info():
-  #Debug Mode
-    data_path = find_absolute_path("config.json", first=True)
-    f = open(data_path)
-    data = json.load(f)
-    debug = data['Fast']['Debug']
-    if debug in "true":
-      return True
-    else:
-      return False
