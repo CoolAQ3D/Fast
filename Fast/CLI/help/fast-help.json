@@ -11,7 +11,9 @@
   "wifi": {
     "description": "shows wifi info",
     "usage": "fast wifi",
-    "subcommands": []
+    "subcommands": [
+      "all"
+    ]
   },
   "template": {
     "description": "get template file quickly",

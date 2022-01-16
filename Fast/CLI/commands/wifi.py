@@ -16,7 +16,7 @@ def wifi(all=False):
     name = "wifi",
     description = "shows wifi info",
     usage = "fast wifi",
-    subcommands = []
+    subcommands = ["all"]
   )
 
   #console.print("Getting Internet/Wifi Information...", style="#24E883")
