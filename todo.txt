@@ -1,4 +1,8 @@
 
 TO DO LIST, PLAN FEATURES
 
-#1: YouTube Downloader
+#1: YouTube Downloader 
+#2: Dropbox & Cloud Storage Support
+#3: Better Phone Number Info Search
+#4: Add Command Alias. Ex: Fast -v (Fast version)
+#5: Fast-UserData.txt file or similar for saving user data locally.
