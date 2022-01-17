@@ -6,3 +6,8 @@ TO DO LIST, PLAN FEATURES
 #3: Better Phone Number Info Search
 #4: Add Command Alias. Ex: Fast -v (Fast version)
 #5: Fast-UserData.txt file or similar for saving user data locally.
+
+#6: Maybe, Discord Message through CLI and python requests.
+#7: Fast system all, for getting info of all info together
+   - Using Python Thread Module for faster.
+#8: Speed command needs threading support for parallel processing download/upload speeds.
