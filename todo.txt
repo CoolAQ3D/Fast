@@ -11,3 +11,6 @@ TO DO LIST, PLAN FEATURES
 #7: Fast system all, for getting info of all info together
    - Using Python Thread Module for faster.
 #8: Speed command needs threading support for parallel processing download/upload speeds.
+#9: test command should only work in development version.
+   - Fast_Develop.json file (check if exist and will not pip install.
+   - Fast_Develop.py for checking if it's in develop mode.
