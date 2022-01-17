@@ -14,3 +14,7 @@ TO DO LIST, PLAN FEATURES
 #9: test command should only work in development version.
    - Fast_Develop.json file (check if exist and will not pip install.
    - Fast_Develop.py for checking if it's in develop mode.
+#10: Selenium Support (Virtual Browser) + Template Option (for web scraping)
+
+#11: Better GUI/UI Console Design
+    - Rich Python Module 
