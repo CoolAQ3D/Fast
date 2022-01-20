@@ -1,11 +1,19 @@
 from setuptools import setup, find_packages
 
-import os 
-os.system("pip install rich")
-from Fast.CLI import UserData
+#More stuffs
+from setuptools.command.develop import develop
+from setuptools.command.install import install
+from subprocess import check_call
+
+from Fast.CLI.user_data import UserData
 
 #Create UserData File on install
 UserData.create()
+class PostInstallCommand(install):
+  def run(self):
+      install.run(self)
+      print("hellllllllloooooo world")
+
 
 setup(
   name="FastTools",
@@ -25,5 +33,8 @@ setup(
   entry_points='''
   [console_scripts]
   fast=Fast.CLI.fast:cli
-  '''
+  ''',
+  cmdclass={
+        'install': PostInstallCommand,
+    },
 )
