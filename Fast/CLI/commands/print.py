@@ -9,7 +9,8 @@ def print(args, style=None):
     name = "print",
     description = "print with stylies",
     usage = "fast print (optional: rich style)",
-    subcommands = []
+    subcommands = [],
+    alias = "-p"
   )
 
   console.print(args, style=style)

@@ -10,10 +10,11 @@ setup(
     'discord',
     'rich',
     'speedtest-cli',
-    'psutil'
+    'psutil',
+    "phonenumbers"
   ],
   include_package_data=True,
-  package_data={'': ['*.json']},
+  package_data={'': ['*.json', "*.txt"]},
   #py_modules=['fast', 'commands', 'file_viewer'],
   entry_points='''
   [console_scripts]

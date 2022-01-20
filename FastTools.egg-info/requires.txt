@@ -2,3 +2,4 @@ discord
 rich
 speedtest-cli
 psutil
+phonenumbers

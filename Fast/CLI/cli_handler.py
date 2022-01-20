@@ -18,6 +18,7 @@ class Command_Handler:
   from Fast.CLI.commands.file import file  
   from Fast.CLI.commands.tools import tools
   from Fast.CLI.commands.template import template
+  from Fast.CLI.commands.phone_number import phone
 
   #For testing add help
   from Fast.CLI.commands.test import test
@@ -31,13 +32,18 @@ class Command_Handler:
 
     try:
       if command == "help":
-        Command_Handler.help(subcommands)
+        #for help
+        command = subcommands
+        Command_Handler.help(command)
       elif command == "run":
         #if try to use run function which is this
         #will ignore 
         raise AttributeError("Permission Deniend!")
       elif command == "-v":
         print("Version: 1.0.0")
+      elif command[0] == "-":
+        command = Alias.get(command)
+        eval(f"Command_Handler.{command}({subcommands})")
       else:
         eval(f"Command_Handler.{command}({subcommands})")
 
@@ -64,13 +70,30 @@ class Command_Handler:
     
     #If given command run, show that command help instead of all
     if command_name:
-      Commands_Info.get(command_name)
+
+      Commands_Info.get(command_name[1:-1])
       return
  
     command_list = [command for command in dir(Command_Handler) if command.startswith('__') is False]
 
     console.print("[bold #1CE27E]Available Commands[/bold #1CE27E] \n" + ",".join(command_list))
+
+ ##Alias Feature fast -a help   
+class Alias:
+  def get(command):
+    help_path = find_absolute_path("fast-help.json", first=True)
     
+    f = open(help_path)
+    data = json.load(f)
+
+    for command_name in data:
+      try: 
+        alias = data[command_name]['alias']
+        if alias == command:
+          #print(command_name)
+          return command_name
+      except:
+        pass
 
 
 
@@ -92,6 +115,7 @@ class Commands_Info:
       description = data[command]['description']
       usage = data[command]['usage']
       subcommands = data[command]['subcommands']
+      alias = data[command]['alias']
 
       console.print(invalid_usage)
       console.print(f"[#F0CF3C bold][Description][/#F0CF3C bold]: {description}")
@@ -99,6 +123,10 @@ class Commands_Info:
 
       if len(subcommands) != 0:
         console.print(f"[#F0CF3C bold][SubCommands][/#F0CF3C bold]: {subcommands}")
+      
+      if alias != "N/A":
+        console.print(f"[#F0CF3C bold][Alias][/#F0CF3C bold]: {alias}")
+
 
     except KeyError as e: 
       console.print(invalid_usage)

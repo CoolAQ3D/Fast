@@ -9,7 +9,8 @@ def add_help(
   name,
   description = "N/A",
   usage = "N/A",
-  subcommands = []
+  subcommands = [],
+  alias = "N/A"
 ):
   help_path = find_absolute_path("fast-help.json", first=True)
     
@@ -22,6 +23,8 @@ def add_help(
     data[name]['description'] = description
     data[name]['usage'] = usage
     data[name]['subcommands'] = subcommands
+    data[name]['alias'] = alias
+    
 
   #If doesn't exit, create
   except KeyError as e:
@@ -32,7 +35,8 @@ def add_help(
       f"{name}": {
         "description": f"{description}",
         "usage": f"{usage}",
-        "subcommands": f"{subcommands}"
+        "subcommands": f"{subcommands}",
+        "alias": f"{alias}"
       }
     }
     data.update(new_data)

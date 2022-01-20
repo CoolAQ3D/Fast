@@ -13,7 +13,8 @@
     "usage": "fast wifi",
     "subcommands": [
       "all"
-    ]
+    ],
+    "alias": "N/A"
   },
   "template": {
     "description": "get template file quickly",
@@ -26,8 +27,13 @@
   },
   "system": {
     "description": "shows various system info",
-    "usage": "fast systme [type]",
-    "subcommands": "['memory', 'cpu', 'ram']"
+    "usage": "fast systme (type)",
+    "subcommands": [
+      "memory",
+      "cpu",
+      "ram"
+    ],
+    "alias": "-sys"
   },
   "speed": {
     "description": "shows internet speed",
@@ -37,12 +43,18 @@
   "print": {
     "description": "print with stylies",
     "usage": "fast print (optional: rich style)",
-    "subcommands": []
+    "subcommands": [],
+    "alias": "-p"
   },
   "file": {
     "description": "get various file info",
     "usage": "fast file (subcommand) (filename/location) (optional: start location, PATH ONLY)",
-    "subcommands": "['create', 'path', 'view']"
+    "subcommands": [
+      "create",
+      "path",
+      "view"
+    ],
+    "alias": "-f"
   },
   "debug": {
     "description": "shows extra info",

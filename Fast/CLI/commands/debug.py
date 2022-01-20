@@ -10,7 +10,7 @@ def debug(value):
     name = "debug",
     description = "shows extra info",
     usage = "fast debug (subcommand)",
-    subcommands = ["on", "off", "true", "false"]
+    subcommands = ["on", "off", "true", "false"],
   )
 
   data_path = find_absolute_path("config.json", first=True)

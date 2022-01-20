@@ -9,8 +9,9 @@ def system(system_type):
   add_help(
     name = "system",
     description = "shows various system info",
-    usage = "fast systme (type)",
-    subcommands = ["memory", "cpu", "ram"]
+    usage = "fast system (type)",
+    subcommands = ["memory", "cpu", "ram"],
+    alias = "-sys"
   )
 
   if system_type in "ram":

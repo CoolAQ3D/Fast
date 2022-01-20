@@ -1,0 +1,16 @@
+#User Data
+
+#Enables extra features
+debug=False
+
+#Requirements Path
+requirements="requirements.txt"
+
+#Discord Login Token, env name only
+token=token
+channel=channel
+
+
+
+
+

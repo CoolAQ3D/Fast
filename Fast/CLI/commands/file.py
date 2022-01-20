@@ -21,7 +21,8 @@ def file(value, args, start_location="/home/runner"):
     name = "file",
     description = "get various file info",
     usage = "fast file (subcommand) (filename/location) (optional: start location, PATH ONLY)",
-    subcommands = ["create", "path", "view"]
+    subcommands = ["create", "path", "view"],
+    alias = "-f"
   )
   
   if value in "create":
