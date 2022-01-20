@@ -1,9 +1,9 @@
 
 #Custom User Data Reader
 
-from rich.console import Console
+#from rich.console import Console
 import os, json, shutil
-console = Console()
+#console = Console()
 from Fast.CLI.path.abs_path import find_absolute_path
 
 class UserData:
@@ -53,7 +53,7 @@ class UserData:
     #except FileNotFoundError:
       #UserData.create()
     except Exception as e:
-      console.print(f"Error Settings Data: {e}", style="red")
+      print(f"Error Settings Data: {e}")
   
   def create():
     try:
