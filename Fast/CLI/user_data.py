@@ -50,8 +50,8 @@ class UserData:
             pass
         
         return settings
-    except FileNotFoundError:
-      UserData.create()
+    #except FileNotFoundError:
+      #UserData.create()
     except Exception as e:
       console.print(f"Error Settings Data: {e}", style="red")
   
