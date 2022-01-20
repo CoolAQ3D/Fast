@@ -1,8 +1,4 @@
 from setuptools import setup, find_packages
-from Fast.CLI import UserData
-
-#Create UserData File on install
-UserData.create()
 
 setup(
   name="FastTools",
@@ -24,3 +20,7 @@ setup(
   fast=Fast.CLI.fast:cli
   '''
 )
+
+from Fast.CLI import UserData
+#Create UserData File on install
+UserData.create()
