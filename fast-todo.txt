@@ -17,4 +17,8 @@ TO DO LIST, PLAN FEATURES
 #10: Selenium Support (Virtual Browser) + Template Option (for web scraping)
 
 #11: Better GUI/UI Console Design
+<<<<<<< HEAD
     - Rich Python Module 
+=======
+    - Rich Python Module 
+>>>>>>> origin/main
