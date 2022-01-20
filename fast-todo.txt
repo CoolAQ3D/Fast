@@ -1,6 +1,11 @@
 
 TO DO LIST, PLAN FEATURES
-
+#Top: check user_data before running commands
+  - add traceback
+  - flask
+  - Selenium
+  - YouTube settings 
+  
 #1: YouTube Downloader 
 #2: Dropbox & Cloud Storage Support
 #3: Better Phone Number Info Search

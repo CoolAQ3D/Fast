@@ -10,7 +10,14 @@ requirements="requirements.txt"
 token=token
 channel=channel
 
+#YouTube Settings
+video_type=mp4
+video_quality=480p
 
+#Rich Traceback
+traceback=true
 
+flask=true
+selenium=true
 
 
