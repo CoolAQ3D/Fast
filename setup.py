@@ -1,4 +1,7 @@
 from setuptools import setup, find_packages
+
+import os 
+os.system("pip install rich")
 from Fast.CLI import UserData
 
 #Create UserData File on install
