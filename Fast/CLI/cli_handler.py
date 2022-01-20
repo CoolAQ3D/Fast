@@ -4,6 +4,7 @@ from pathlib import Path
 
 from Fast.CLI.path.abs_path import find_absolute_path
 from Fast.CLI.debug import Debug
+from Fast.CLI import UserData
 
 console = Console()
 
@@ -28,7 +29,8 @@ class Command_Handler:
   
     #For Run Speed
     start_time = time.time()
-    debug = Debug.info()
+    #debug = Debug.info()
+    debug = UserData.settings.debug()
 
     try:
       if command == "help":

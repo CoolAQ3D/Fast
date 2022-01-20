@@ -4,6 +4,7 @@ from rich.console import Console
 from Fast.CLI.cli_handler import Command_Handler
 
 from Fast.CLI.debug import Debug
+from Fast.CLI import UserData
 
 console = Console()
 #from rich.traceback import install
@@ -20,7 +21,7 @@ def cli():
     console.print('Welcome to [red bold]FastTools[/red bold] by [#2CEFD8]MrCools![/#2CEFD8]')
     console.print('[bold #F5D61B][Help][/bold #F5D61B] For help, type [#F5D61B]Fast help[/#F5D61B]')
 
-    debug = Debug.info()
+    debug = UserData.settings.debug()
     if debug:
       debug = "on"
     else:
