@@ -1,0 +1,4 @@
+
+  [console_scripts]
+  fast=Fast.CLI.fast:cli
+  

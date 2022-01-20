@@ -50,8 +50,10 @@ class UserData:
             pass
         
         return settings
-    #except FileNotFoundError:
-      #UserData.create()
+    except FileNotFoundError:
+      UserData.create()
+      settings = UserData.load()
+      return settings
     except Exception as e:
       print(f"Error Settings Data: {e}")
   
