@@ -31,3 +31,34 @@ Fast.start(
 
 ```
 
+### CLI Commands
+To see more info, type 
+```bash 
+fast help "command name"
+```
+<details><summary>Help</summary>
+</details>
+<details><summary>Print</summary>
+</details>
+<details><summary>File</summary>
+</details>
+<details><summary>Phone</summary>
+</details>
+<details><summary>Replit</summary>
+</details>
+<details><summary>Speed</summary>
+</details>
+<details><summary>System</summary>
+</details>
+<details><summary>Template</summary>
+</details>
+<details><summary>Test</summary>
+</details>
+<details><summary>Tools</summary>
+</details>
+<details><summary>Wifi</summary>
+</details>
+<details><summary>YT</summary>
+</details>
+
+

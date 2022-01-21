@@ -98,9 +98,11 @@ class Alias:
         alias = data[command_name]['alias']
         if alias == command:
           #print(command_name)
-          return command_name
-      except:
-        return None
+          return command_name   
+      except Exception as e:
+        #print(e)
+        pass
+    
 
 
 
