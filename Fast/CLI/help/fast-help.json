@@ -6,7 +6,8 @@
       "clear",
       "pycache",
       "pjson"
-    ]
+    ],
+    "alias": "N/A"
   },
   "wifi": {
     "description": "shows wifi info",
@@ -66,10 +67,10 @@
       "false"
     ]
   },
-  "ytdl": {
+  "yt": {
     "description": "YouTube Downloader",
-    "usage": "fast ytdl url (optional: custom or cc)",
-    "subcommands": [],
+    "usage": "fast ytdl link or test (for sample)",
+    "subcommands": "[]",
     "alias": "N/A"
   }
 }

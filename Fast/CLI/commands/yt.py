@@ -18,7 +18,7 @@ import os
 
 def yt(url):
   add_help(
-    name = "ytdl",
+    name = "yt",
     description = "YouTube Downloader",
     usage = "fast ytdl link or test (for sample)"
   )

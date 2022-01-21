@@ -12,6 +12,7 @@ Fast/CLI/commands/debug.py
 Fast/CLI/commands/file.py
 Fast/CLI/commands/phone_number.py
 Fast/CLI/commands/print.py
+Fast/CLI/commands/replit.py
 Fast/CLI/commands/speed.py
 Fast/CLI/commands/system.py
 Fast/CLI/commands/template.py
