@@ -1,7 +1,7 @@
 #User Data
 
 #Enables extra features
-debug=False
+debug=True
 
 #Requirements Path
 requirements="requirements.txt"
@@ -11,8 +11,9 @@ token=token
 channel=channel
 
 #YouTube Settings
-video_type=mp4
-video_quality=480p
+video_type=MP4
+video_quality=360p
+download_location=Download
 
 #Rich Traceback
 traceback=true
