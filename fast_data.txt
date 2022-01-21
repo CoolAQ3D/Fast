@@ -13,6 +13,7 @@ channel=channel
 #YouTube Settings
 video_type=MP4
 video_quality=360p
+download_location=Download
 
 #Rich Traceback
 traceback=true

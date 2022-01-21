@@ -31,7 +31,8 @@ class UserData:
         settings = {
           "debug": "",
           "video_type": "",
-          "video_quality": ""
+          "video_quality": "",
+          "download_location": ""
         }
 
 

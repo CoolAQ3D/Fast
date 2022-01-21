@@ -30,6 +30,7 @@ def download_video(url):
 
   video_type = settings['video_type']
   video_quality = settings["video_quality"]
+  download_location = settings["download_location"]
   
   try: 
     url = str(url)
@@ -46,11 +47,7 @@ def download_video(url):
     #assume it's mp3
     video = youtube.streams.filter(only_audio=True).first()
   
-  download_path = "./Downloads"
-  if not os.path.isdir(download_path):
-   os.makedirs(download_path)
-
-  downloadFile = video.download(download_path)
+  downloadFile = video.download(f"./{download_location}")
   print(f'Downloading {url}')
 
   print(f'Video_Type: {video_type}')
