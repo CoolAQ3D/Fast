@@ -12,9 +12,6 @@ from Fast.CLI import add_help
 from Fast.CLI import UserData
 
 import os
-download_path = "./Downloads"
-if not os.path.isdir(download_path):
-   os.makedirs(download_path)
 
 
 def yt(url):
@@ -49,7 +46,11 @@ def download_video(url):
     #assume it's mp3
     video = youtube.streams.filter(only_audio=True).first()
   
-  downloadFile = video.download("./Downloads")
+  download_path = "./Downloads"
+  if not os.path.isdir(download_path):
+   os.makedirs(download_path)
+
+  downloadFile = video.download(download_path)
   print(f'Downloading {url}')
 
   print(f'Video_Type: {video_type}')
