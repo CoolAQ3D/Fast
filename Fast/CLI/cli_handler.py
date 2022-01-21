@@ -20,6 +20,7 @@ class Command_Handler:
   from Fast.CLI.commands.tools import tools
   from Fast.CLI.commands.template import template
   from Fast.CLI.commands.phone_number import phone
+  from Fast.CLI.commands.yt import yt
 
   #For testing add help
   from Fast.CLI.commands.test import test
@@ -45,7 +46,10 @@ class Command_Handler:
         print("Version: 1.0.0")
       elif command[0] == "-":
         command = Alias.get(command)
-        eval(f"Command_Handler.{command}({subcommands})")
+        if command:
+          eval(f"Command_Handler.{command}({subcommands})")
+        else:
+          print(f"Alias {subcommands} not found")
       else:
         eval(f"Command_Handler.{command}({subcommands})")
 
@@ -95,7 +99,7 @@ class Alias:
           #print(command_name)
           return command_name
       except:
-        pass
+        return None
 
 
 

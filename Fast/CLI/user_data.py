@@ -30,9 +30,8 @@ class UserData:
         #Supported Settings
         settings = {
           "debug": "",
-          "requirements": "",
-          "token": "",
-          "channel": ""
+          "video_type": "",
+          "video_quality": ""
         }
 
 

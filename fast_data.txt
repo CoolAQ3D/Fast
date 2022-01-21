@@ -1,0 +1,23 @@
+#User Data
+
+#Enables extra features
+debug=True
+
+#Requirements Path
+requirements="requirements.txt"
+
+#Discord Login Token, env name only
+token=token
+channel=channel
+
+#YouTube Settings
+video_type=MP4
+video_quality=360p
+
+#Rich Traceback
+traceback=true
+
+flask=true
+selenium=true
+
+

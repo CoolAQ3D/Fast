@@ -10,7 +10,8 @@ setup(
     'discord',
     'speedtest-cli',
     'psutil',
-    "phonenumbers"
+    "phonenumbers",
+    #"pytube"
   ],
   include_package_data=True,
   package_data={'': ['*.json', "*.txt"]},

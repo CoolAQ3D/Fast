@@ -65,5 +65,11 @@
       "true",
       "false"
     ]
+  },
+  "ytdl": {
+    "description": "YouTube Downloader",
+    "usage": "fast ytdl url (optional: custom or cc)",
+    "subcommands": [],
+    "alias": "N/A"
   }
 }
