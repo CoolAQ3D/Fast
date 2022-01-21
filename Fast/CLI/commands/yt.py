@@ -40,11 +40,12 @@ def download_video(url):
     return print('Invalid Video Link')
   
   if video_type == "mp4":
-    print('running mp4')
+    #print('running mp4')
     video = youtube.streams.filter(progressive=True, file_extension='mp4', res=video_quality).first()
   else:
-    print('running mp3')
+    #print('running mp3')
     #assume it's mp3
+    
     video = youtube.streams.filter(only_audio=True).first()
   
   downloadFile = video.download(f"./{download_location}")
