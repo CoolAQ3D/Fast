@@ -20,14 +20,14 @@ def yt(url):
   add_help(
     name = "ytdl",
     description = "YouTube Downloader",
-    usage = "fast ytdl url (optional: custom or cc)"
+    usage = "fast ytdl link or test (for sample)"
   )
   download_video(url)
 
 
 
 def download_video(url):
-  if url == ".":
+  if url == "test":
     url = "https://www.youtube.com/watch?v=DAjMZ6fCPOo"
 
   settings = UserData.load()
