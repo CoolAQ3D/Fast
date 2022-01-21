@@ -1,22 +1,18 @@
 
 TO DO LIST, PLAN FEATURES
-#Top: check user_data before running commands
-  - add traceback
-  - flask
-  - Selenium
-  - YouTube settings 
+
   
-#1: YouTube Downloader 
+X #1: YouTube Downloader 
 #2: Dropbox & Cloud Storage Support
 #3: Better Phone Number Info Search
-#4: Add Command Alias. Ex: Fast -v (Fast version)
-#5: Fast-UserData.txt file or similar for saving user data locally.
+X #4: Add Command Alias. Ex: Fast -v (Fast version)
+X #5: Fast-UserData.txt file or similar for saving user data locally.
 
 #6: Maybe, Discord Message through CLI and python requests.
 #7: Fast system all, for getting info of all info together
    - Using Python Thread Module for faster.
 #8: Speed command needs threading support for parallel processing download/upload speeds.
-#9: test command should only work in development version.
+XX #9: test command should only work in development version.
    - Fast_Develop.json file (check if exist and will not pip install.
    - Fast_Develop.py for checking if it's in develop mode.
 #10: Selenium Support (Virtual Browser) + Template Option (for web scraping)
