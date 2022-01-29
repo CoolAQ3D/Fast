@@ -45,6 +45,6 @@ def cli():
   subcommands = ",".join(subcommands)
 
   #Run Commands
-  Command_Handler.run(command, subcommands)
+  Command_Handler.RunFastCommands(command, subcommands)
 
 

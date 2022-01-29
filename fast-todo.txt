@@ -1,9 +1,6 @@
 
 TO DO LIST, PLAN FEATURES
 
-1. Replit File Name
-
-1: Change run command to _RunCommands() or RunCommands()
 
 #3: Better Phone Number Info Search
 
@@ -11,30 +8,9 @@ TO DO LIST, PLAN FEATURES
    - Using Python Thread Module for faster.
    - Rich Table for UI Design
 
-#8: Speed command needs threading support for parallel processing download/upload speeds.
-  - Rich Table
-
-#10: Selenium Support (Virtual Browser) + Template Option (for web scraping)
-
-
 #11: Better GUI/UI Console Design
 
-
-
-Legends/Symbols:
-  | = Done
-  || = Maybe
-  ||| = No Plan to Add atm
-
-| #1: YouTube Downloader 
-| #4: Add Command Alias. Ex: Fast -v (Fast version)
-| #5: Fast-UserData.txt file or similar for saving user data locally.
-      - Fast_Data.txt is used currently
-
-|| #6: Maybe, Discord Message through CLI and python requests.
-|| #2: Dropbox & Cloud Storage Support
-|| #2.1: add run command for running custom functions
-
-||| #9: test command should only work in development version.
-   - Fast_Develop.json file (check if exist and will not pip install.
-   - Fast_Develop.py for checking if it's in develop mode.
+Maybe,
+#10: Selenium Support (Virtual Browser) + Template Option (for web scraping) ?????? 
+  - HTML Browser + Virtual Browser ???
+  - Probably won't show up both at the same time in here.

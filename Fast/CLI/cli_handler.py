@@ -4,7 +4,7 @@ from pathlib import Path
 
 from Fast.CLI.path.abs_path import find_absolute_path
 from Fast.CLI.debug import Debug
-from Fast.CLI import UserData
+from Fast.CLI import UserData, Scripts
 
 console = Console()
 
@@ -27,19 +27,22 @@ class Command_Handler:
   from Fast.CLI.commands.test import test
 
 
-  def run(command, subcommands):
+  def RunFastCommands(command, subcommands):
   
     #For Run Speed
     start_time = time.time()
     #debug = Debug.info()
     debug = UserData.settings.debug()
+    if debug:
+      text = f" * Fast CLI - {command} - v1.0 * "
+      console.print(F'[#F4CE13]{Scripts.underline(text)}[/#F4CE13]')
 
     try:
       if command == "help":
         #for help
         command = subcommands
         Command_Handler.help(command)
-      elif command == "run":
+      elif command == "RunFastCommands":
         #if try to use run function which is this
         #will ignore 
         raise AttributeError("Permission Deniend!")
@@ -56,7 +59,9 @@ class Command_Handler:
 
       end_time = time.time()
       if debug:
-        console.print(f'[#8EEA18 bold][Speed][/#8EEA18 bold] Took [red bold]{round(end_time-start_time, 1)}s [/red bold] to run!')
+        _text = f" * Finished in {round(end_time-start_time, 1)}s  * "
+        console.print(F'[#F4CE13]{Scripts.underline(_text)}[/#F4CE13]')
+        #console.print(f'[#8EEA18 bold][Speed][/#8EEA18 bold] Finished in [red bold]{round(end_time-start_time, 1)}s [/red bold]')
 
     except TypeError as e:
       #If invalid command usages
@@ -82,7 +87,11 @@ class Command_Handler:
       return
  
     command_list = [command for command in dir(Command_Handler) if command.startswith('__') is False]
-
+    
+    for i, cmds in enumerate(command_list):
+      if cmds == "RunFastCommands":
+        command_list[i] = f"[red]{cmds}[/red]"
+ 
     console.print("[bold #1CE27E]Available Commands[/bold #1CE27E] \n" + ",".join(command_list))
 
  ##Alias Feature fast -a help   

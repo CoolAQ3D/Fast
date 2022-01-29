@@ -28,7 +28,7 @@
   },
   "system": {
     "description": "shows various system info",
-    "usage": "fast systme (type)",
+    "usage": "fast system (type)",
     "subcommands": [
       "memory",
       "cpu",
@@ -39,7 +39,8 @@
   "speed": {
     "description": "shows internet speed",
     "usage": "fast speed (optional: cli)",
-    "subcommands": []
+    "subcommands": [],
+    "alias": "N/A"
   },
   "print": {
     "description": "print with stylies",

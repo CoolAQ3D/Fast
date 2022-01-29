@@ -1,24 +1,30 @@
 #User Data
+#Quickly Change Settings Here, Fast will read data from here from now on. 
+# for comments 
 
 #Enables extra features
-debug=True
-
-#Requirements Path
-requirements="requirements.txt"
-
-#Discord Login Token, env name only
-token=token
-channel=channel
+debug=on
 
 #YouTube Settings
 video_type=MP4
 video_quality=360p
 download_location=Download
 
-#Rich Traceback
-traceback=true
 
-flask=true
-selenium=true
+###########PLAN FEATURES 
+
+#Requirements Path
+#requirements="requirements.txt"
+
+#Discord Login Token, env name only
+#token=token
+#channel=channel
+
+
+#Rich Traceback
+#traceback=true
+
+#flask=true
+#selenium=true
 
 
