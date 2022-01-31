@@ -16,6 +16,19 @@ Use the package manager `pip` to install.
 pip install git+https://github.com/CoolAQ3D/Fast
 ```
 
+Script for Replit since it delete files every now and then...
+
+#### Language Python
+```bash
+import os, pkg_resources
+
+for package in ['FastTools']:
+    try:
+      dist = pkg_resources.get_distribution(package)
+    except pkg_resources.DistributionNotFound:
+      os.system("pip install git+https://github.com/CoolAQ3D/Fast")
+```
+
 ## Usage
 `fast help` in consle to get started!
 
