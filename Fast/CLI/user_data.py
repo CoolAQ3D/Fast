@@ -2,8 +2,13 @@
 #Custom User Data Reader
 
 #from rich.console import Console
-import os, json, shutil
-#console = Console()
+import os, json, shutil, time
+from rich.progress import track
+from rich.console import Console
+
+from Fast.CLI.first_time_runner import FirstTimeScript
+
+console = Console()
 from Fast.CLI.path.abs_path import find_absolute_path
 
 class UserData:
@@ -62,14 +67,16 @@ class UserData:
       path = find_absolute_path('fast_data_template.txt', first=True)
 
       filename = "fast_data.txt"
-
       f = open(filename, "w")
-      print(f'Creating fast_data.txt')
 
       new_path = find_absolute_path(filename, first=True, start_location=os.getcwd())
       shutil.copyfile(path, new_path)
 
-      print(f'Successfully created {filename}')
+      #First Time run only such as loading bar
+      FirstTimeScript.loading_bar()
+      FirstTimeScript.copy_readme()
+
+      console.print("#2: Successfully setup FAST CLI.")
     except Exception as e:
       pass
 

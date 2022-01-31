@@ -38,22 +38,32 @@ class Command_Handler:
       console.print(F'[#F4CE13]{Scripts.underline(text)}[/#F4CE13]')
 
     try:
+      #Run Help Comamnd
       if command == "help":
-        #for help
         command = subcommands
         Command_Handler.help(command)
+      
+      #RunFastCommands is this function, so won't run
       elif command == "RunFastCommands":
-        #if try to use run function which is this
-        #will ignore 
         raise AttributeError("Permission Deniend!")
+      
+      #Setup fast cli silently, first time usage only
+      elif command == ".":
+        pass
+
+      #Version
       elif command == "-v":
         print("Version: 1.0.0")
+
+      #Alias
       elif command[0] == "-":
         command = Alias.get(command)
         if command:
           eval(f"Command_Handler.{command}({subcommands})")
         else:
           print(f"Alias {subcommands} not found")
+
+      #Commands
       else:
         eval(f"Command_Handler.{command}({subcommands})")
 
@@ -61,7 +71,6 @@ class Command_Handler:
       if debug:
         _text = f" * Finished in {round(end_time-start_time, 1)}s  * "
         console.print(F'[#F4CE13]{Scripts.underline(_text)}[/#F4CE13]')
-        #console.print(f'[#8EEA18 bold][Speed][/#8EEA18 bold] Finished in [red bold]{round(end_time-start_time, 1)}s [/red bold]')
 
     except TypeError as e:
       #If invalid command usages
