@@ -77,11 +77,25 @@ class Command_Handler:
       Commands_Info.get(command)
       if debug:
         console.print(f'[red bold][Debug][/red bold] {e}')
+
+        end_time = time.time()
+        _text = f" * Finished in {round(end_time-start_time, 1)}s  * "
+        console.print(F'[#F4CE13]{Scripts.underline(_text)}[/#F4CE13]')
+
     except AttributeError as e:
       #If commands not found
-      console.print(f'This command is not found. \nType [#1CE27E]fast help[/#1CE27E]')
+      #console.print(f'This command is not found. \nType [#1CE27E]fast help[/#1CE27E]')
+      _error = "❌ ERROR: Command Not Found ❌ "
+      _help = "✨ HELP: type fast help ✨"
+      console.print(f"{_error}", style="red")
+      console.print(f"{_help}", style="#2EE92B")
+
       if debug:
-        console.print(f'[red bold][Debug][/red bold] {e}')
+        console.print(f'\n[red bold][Debug][/red bold] {e}')
+
+        end_time = time.time()
+        _text = f" * Finished in {round(end_time-start_time, 1)}s  * "
+        console.print(F'[#F4CE13]{Scripts.underline(_text)}[/#F4CE13]')
     except Exception as other_erros:
       if debug:
         console.print(f"[red bold][Debug][/red bold] {other_erros}")

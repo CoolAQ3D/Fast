@@ -1,7 +1,7 @@
 #User Data
 
 #Enables extra features
-debug=True
+debug=on
 
 #Requirements Path
 requirements="requirements.txt"

@@ -6,6 +6,7 @@ Fast/CLI/__init__.py
 Fast/CLI/cli_handler.py
 Fast/CLI/debug.py
 Fast/CLI/fast.py
+Fast/CLI/first_time_runner.py
 Fast/CLI/scripts.py
 Fast/CLI/user_data.py
 Fast/CLI/commands/__init__.py
