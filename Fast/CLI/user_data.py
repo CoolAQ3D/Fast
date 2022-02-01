@@ -16,8 +16,12 @@ class UserData:
     remove_hashtag = []
     data_only = []
 
+    #Will make a folder to store datas
+    fast_folder_path = FirstTimeScript.create_fast_info_folder()
+
+
     try:
-        user_data =open("fast_data.txt","r")
+        user_data =open(f"{fast_folder_path}Fast_Data.txt","r")
         lines = user_data.read().split('\n')
 
         #remove lines that starts with #
@@ -56,23 +60,16 @@ class UserData:
         
         return settings
     except FileNotFoundError:
-      UserData.create()
+      UserData.create(fast_folder_path)
       settings = UserData.load()
       return settings
     except Exception as e:
       print(f"Error Settings Data: {e}")
   
-  def create():
+  def create(fast_folder_path):
     try:
-      path = find_absolute_path('fast_data_template.txt', first=True)
-
-      filename = "fast_data.txt"
-      f = open(filename, "w")
-
-      new_path = find_absolute_path(filename, first=True, start_location=os.getcwd())
-      shutil.copyfile(path, new_path)
-
-      #First Time run only such as loading bar
+      #First Time run only such as creating data, loading bar
+      FirstTimeScript.create_data()
       FirstTimeScript.loading_bar()
       FirstTimeScript.copy_readme()
 

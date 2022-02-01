@@ -5,6 +5,7 @@
 - Added Changelog, `fast -ch`
 - Changed ToDo.txt to ToDo.md
 - Better Cosnole GUI
+- Added Fast Info folder.
 
 ### Others
 <details><summary>See Old Changelogs</summary>

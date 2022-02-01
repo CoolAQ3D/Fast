@@ -2,7 +2,7 @@
 #Things Needed to run fast library will put here
 
 import os, requests
-
+from Fast.CLI.first_time_runner import FirstTimeScript
 
 class Scripts:
   def underline(text):
@@ -34,6 +34,8 @@ class Scripts:
     r = requests.get("https://raw.githubusercontent.com/CoolAQ3D/Fast/main/Changelog.md")
     file_content = r.text
 
-    with open("Fast_Changelog.md", "w") as f: 
+    fast_folder_path = FirstTimeScript.create_fast_info_folder()
+
+    with open(f"{fast_folder_path}Fast_Changelog.md", "w") as f: 
       f.write(file_content)
   
