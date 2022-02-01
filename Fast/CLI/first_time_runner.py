@@ -17,7 +17,6 @@ class FirstTimeScript:
 
    with open("Fast_README.md", "w") as f: 
     f.write(file_content)
-
     
   def loading_bar():
     print("#1: Setting Up FAST CLI... \n-- First time, only!")

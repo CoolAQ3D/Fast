@@ -54,6 +54,10 @@ class Command_Handler:
       #Version
       elif command == "-v":
         print("Version: 1.0.0")
+      
+      #Changelog
+      elif command == "-ch":
+        Scripts.download_changelog()
 
       #Alias
       elif command[0] == "-":
