@@ -30,7 +30,7 @@ class Scripts:
         #print(underline_text_array)
         return "".join(underline_text_array)
   
-   def download_changelog():
+  def download_changelog():
     r = requests.get("https://raw.githubusercontent.com/CoolAQ3D/Fast/main/Changelog.md")
     file_content = r.text
 
