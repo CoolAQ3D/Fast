@@ -1,5 +1,0 @@
-rich
-discord
-speedtest-cli
-psutil
-phonenumbers
