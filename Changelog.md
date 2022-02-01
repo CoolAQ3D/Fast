@@ -1,11 +1,12 @@
 
 ## Fast Changelog
-### Version v1.1
+### Version v2
 
 - Added Changelog, `fast -ch`
 - Changed ToDo.txt to ToDo.md
 - Better Cosnole GUI
 - Added Fast Info folder.
+- Added File Browser (Using Console/Terminal) `fast fb`
 
 ### Others
 <details><summary>See Old Changelogs</summary>

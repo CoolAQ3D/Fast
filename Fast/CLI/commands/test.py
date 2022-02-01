@@ -13,37 +13,40 @@ def test(_type=None):
     user_data = UserData.load()
     print(json.dumps(user_data, indent=2))
   else:
-    TestCommmands.run()
+    subcommands = _type
+    TestCommmands.run(subcommands)
   
 
 class TestCommmands:
-  def run():
-    def underline(text):
-      underline_text = '\u2500' * os.get_terminal_size().columns      
+  def run(subcommands):
+    all_files = Browser.folder("/home")
+
+    for x in all_files:
+      print(x)
+    
       
-      underline_text_array = []
 
-      for i in underline_text:
-        underline_text_array.append(i)
+    
+class Browser:
+  def folder(start_location):
+    all_files = []
 
-      length = len(underline_text_array) / 2
-      length = int(round(length, 0))
+    print(start_location)
 
-      n_times = 0
+    folder = [name for name in os.listdir(start_location) if os.path.isdir(name)]
 
-      text_size = len(text) / 2
-      text_size = int(round(text_size, 0)) + 1
+    for n, each_folder in enumerate(folder):
+      #folder[n] = f"📁 {each_folder}"
+      all_files.append(f"{each_folder} 📁 ")
+    
+    file = [name for name in os.listdir(start_location) if os.path.isfile(name)]
 
-      for x in text:
-        n_times += 1
-        underline_text_array[length - text_size + n_times] = x
-      
-      #print(length)
-       
-      #print(underline_text_array)
-      return "".join(underline_text_array)
+    for n, each_file in enumerate(file):
+      #file[n] = f"📁 {each_file}"
+      all_files.append(f"{each_file} 📄 ")
+    
+    return all_files
+    
 
-
-    #console.print(underline("Fast CLI"), style="blue")
-    #underline()
-    pass
+  
+  

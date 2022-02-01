@@ -16,7 +16,8 @@ class Command_Handler:
   from Fast.CLI.commands.wifi import wifi
   from Fast.CLI.commands.speed import speed
   from Fast.CLI.commands.system import system
-  from Fast.CLI.commands.file import file  
+  from Fast.CLI.commands.file import file 
+  from Fast.CLI.commands.file_browser import fb 
   from Fast.CLI.commands.tools import tools
   from Fast.CLI.commands.template import template
   from Fast.CLI.commands.phone_number import phone

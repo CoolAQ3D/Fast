@@ -7,11 +7,14 @@ setup(
   packages=find_packages(),
   install_requires=[
     'rich',
+    'colorama',
     'discord',
     'speedtest-cli',
     'psutil',
     "phonenumbers",
-    #"pytube"
+    #"pytube",
+    "inquirer",
+    "timeout_decorator"
   ],
   include_package_data=True,
   package_data={'': ['*.json', "*.txt"]},
