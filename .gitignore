@@ -1,4 +1,6 @@
 *.egg-info
 fast_data.txt
+Fast_README.md
+Fast_Changelog.md
 main.py
 .breakpoints
