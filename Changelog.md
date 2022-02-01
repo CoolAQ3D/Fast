@@ -1,18 +1,21 @@
 
 ## Fast Changelog
-### Version v1.0
+### Version v1.1
 
-- Fast Library & CLI
-- Added Changelog File
-
+- Added Changelog, `fast -ch`
+- Changed ToDo.txt to ToDo.md
+- Better Cosnole GUI
 
 ### Others
 <details><summary>See Old Changelogs</summary>
 <!--- Old Changelogs --->
+<!-- Template
 <details><summary>v1.0</summary>
-- Fast <br>
-- New <br>
-- Test
+- 
+</details>
+--->
+<details><summary>v1.0</summary>
+- Fast Python Library & CLI (Jan 31, 2022)
 </details>
 <!--- End Here--->
 </details>
