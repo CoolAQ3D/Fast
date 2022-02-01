@@ -1,10 +1,15 @@
 #User Data
 
 #Enables extra features
-debug=True
+debug=on
 
 #Requirements Path
 requirements="requirements.txt"
+
+#FireBrowser
+#Clear console every time
+fb_clear_view=true
+fb_timeout=30
 
 #Discord Login Token, env name only
 token=token

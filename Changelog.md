@@ -7,6 +7,7 @@
 - Better Cosnole GUI
 - Added Fast Info folder.
 - Added File Browser (Using Console/Terminal) `fast fb`
+- New user data for file browsers
 
 ### Others
 <details><summary>See Old Changelogs</summary>
