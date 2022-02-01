@@ -41,9 +41,10 @@ class UserData:
           "debug": "",
           "video_type": "",
           "video_quality": "",
-          "download_location": ""
+          "download_location": "",
+          "fb_clear_view": "",
+          "fb_timeout": ""
         }
-
 
         #Update Data
         for each_data in data_only:

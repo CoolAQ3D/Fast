@@ -35,7 +35,7 @@ class Command_Handler:
     #debug = Debug.info()
     debug = UserData.settings.debug()
     if debug:
-      text = f" * Fast CLI - {command} - v1.0 * "
+      text = f" * Fast CLI - {command} - v2.0 * "
       console.print(F'[#F4CE13]{Scripts.underline(text)}[/#F4CE13]')
 
     try:

@@ -6,6 +6,9 @@ import timeout_decorator
 from rich.console import Console
 from rich.syntax import Syntax
 from rich.table import Table
+from Fast.CLI import UserData
+
+settings = UserData.load()
 
 console = Console()
 def fb(path="/"):
@@ -16,9 +19,12 @@ def fb(path="/"):
     path = "/home/runner/Fast-Studio-for-Testing"
     
   while True:
+    fb_clear_view = settings['fb_clear_view']
     #Clear Console for clean browsing 
-    cls = lambda: print("\033c\033[3J", end='')
-    cls()
+    print(fb_clear_view)
+    if fb_clear_view == "true":
+      cls = lambda: print("\033c\033[3J", end='')
+      cls()
 
     render_path_header = path
     
@@ -47,6 +53,8 @@ def fb(path="/"):
       del path[-1]
       path = "/".join(path)
       print(path)
+    elif value == "⭐ Home":
+      path = "/"
     elif value == "==========":
       pass
     else:
@@ -58,7 +66,8 @@ def fb(path="/"):
     
 
 class File_Browser:
-  @timeout_decorator.timeout(30)
+  timeout_data = int(settings["fb_timeout"])
+  @timeout_decorator.timeout(timeout_data)
   def start(path):
     
     is_file = os.path.isfile(path)
@@ -101,7 +110,11 @@ class File_Browser:
           all_files[n] = "📝 " + all_files[n]
 
     all_files.insert(0,"==========")
-    all_files.insert(0,'⭐ BACK')
+
+    if not path == "/":
+      all_files.insert(0,'⭐ Home')
+      all_files.insert(0,'⭐ BACK')
+      
     all_files.insert(0,'⭐ EXIT')
     #all_files.insert(0,"==========")
 
