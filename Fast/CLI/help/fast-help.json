@@ -73,5 +73,11 @@
     "usage": "fast ytdl link or test (for sample)",
     "subcommands": "[]",
     "alias": "N/A"
+  },
+  "clone": {
+    "description": "clone github files (specific directory only)",
+    "usage": "fast clone url",
+    "subcommands": [],
+    "alias": "N/A"
   }
 }

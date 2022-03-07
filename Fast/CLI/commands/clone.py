@@ -8,7 +8,7 @@ from rich.console import Console
 console = Console()
 from Fast.CLI import add_help
 
-def clone(url, folder_path, move_path):
+def clone(url, folder_path):
 
   add_help(
     name = "clone",
@@ -18,8 +18,12 @@ def clone(url, folder_path, move_path):
   )
 
   os.system(f"git clone {url}")
-  os.replace(folder_path, move_path)
+  
   git_name = folder_path.split("/")[0]
-  shutil.rmtree()
+  folder_name = folder_path.split("/")[-1]
+  
+  os.replace(folder_path, folder_name)
+  
+  shutil.rmtree(git_name)
 
   
