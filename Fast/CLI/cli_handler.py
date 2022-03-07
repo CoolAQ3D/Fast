@@ -23,6 +23,8 @@ class Command_Handler:
   from Fast.CLI.commands.phone_number import phone
   from Fast.CLI.commands.yt import yt
 
+  from Fast.CLI.commands.clone import clone
+
   from Fast.CLI.commands.replit import replit
   #For testing add help
   from Fast.CLI.commands.test import test
