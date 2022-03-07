@@ -14,7 +14,8 @@ setup(
     "phonenumbers",
     #"pytube",
     "inquirer",
-    "timeout_decorator"
+    "timeout_decorator",
+    "flask"
   ],
   include_package_data=True,
   package_data={'': ['*.json', "*.txt"]},

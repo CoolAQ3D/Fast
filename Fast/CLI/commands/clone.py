@@ -19,6 +19,7 @@ def clone(url, folder_path, move_path):
 
   os.system(f"git clone {url}")
   os.replace(folder_path, move_path)
-  shutil.rmtree(folder_path)
+  git_name = folder_path.split("/")[0]
+  shutil.rmtree()
 
   
